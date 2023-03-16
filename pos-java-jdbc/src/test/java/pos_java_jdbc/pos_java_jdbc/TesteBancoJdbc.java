@@ -11,12 +11,11 @@ import model.Userposjava;
 public class TesteBancoJdbc {
 	
 	@Test
-	public void initBanco() {
+	public void initBanco() { // metodo de insert
 
 		UserPosDAO userPosDAO = new UserPosDAO();
 		Userposjava userposjava = new Userposjava();
 		
-		userposjava.setId(6L);
 		userposjava.setNome("Paulo");
 		userposjava.setEmail("paulo@gmail.com");
 		
