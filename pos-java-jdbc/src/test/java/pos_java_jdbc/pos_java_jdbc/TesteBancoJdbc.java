@@ -6,13 +6,14 @@ import org.junit.Test;
 
 import conexaojdbc.SingleConnection;
 import dao.UserPosDAO;
+import model.Telefone;
 import model.Userposjava;
 
 public class TesteBancoJdbc {
 	
 	@Test
 	public void initBanco() { // metodo de insert
-
+		
 		UserPosDAO userPosDAO = new UserPosDAO();
 		Userposjava userposjava = new Userposjava();
 		
@@ -82,6 +83,19 @@ public class TesteBancoJdbc {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+	}
+	
+	@Test
+	public void testeInsertTelefone() { 
+		
+		Telefone telefone = new Telefone();
+		telefone.setNumero("(88) 9 9393-9495");
+		telefone.setTipo("casa");
+		telefone.setUsuário(14L);
+		
+		UserPosDAO userPosDAO = new UserPosDAO();
+		userPosDAO.salvarTelefone(telefone);
 		
 	}
 	
