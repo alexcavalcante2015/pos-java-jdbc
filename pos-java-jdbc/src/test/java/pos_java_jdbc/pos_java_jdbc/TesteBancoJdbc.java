@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import conexaojdbc.SingleConnection;
 import dao.UserPosDAO;
+import model.BeanUserFone;
 import model.Telefone;
 import model.Userposjava;
 
@@ -96,6 +97,20 @@ public class TesteBancoJdbc {
 		
 		UserPosDAO userPosDAO = new UserPosDAO();
 		userPosDAO.salvarTelefone(telefone);
+		
+	}
+	
+	@Test
+	public void testeCarregaFonesUser() {
+		
+		UserPosDAO dao = new UserPosDAO();
+		
+		List<BeanUserFone> list = dao.listaUserFone(2L);
+		
+		for (BeanUserFone beanUserFone : list) {
+			System.out.println(beanUserFone);
+			System.out.println("--------------------------------------------");
+		}
 		
 	}
 	
