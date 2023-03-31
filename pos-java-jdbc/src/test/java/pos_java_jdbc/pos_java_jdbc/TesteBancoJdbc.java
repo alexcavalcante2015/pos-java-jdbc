@@ -93,7 +93,7 @@ public class TesteBancoJdbc {
 		Telefone telefone = new Telefone();
 		telefone.setNumero("(88) 9 9393-9495");
 		telefone.setTipo("casa");
-		telefone.setUsuário(14L);
+		telefone.setUsuário(4L);
 		
 		UserPosDAO userPosDAO = new UserPosDAO();
 		userPosDAO.salvarTelefone(telefone);
@@ -112,6 +112,14 @@ public class TesteBancoJdbc {
 			System.out.println("--------------------------------------------");
 		}
 		
+	}
+	
+	@Test
+	public void testeDeletarFones() {
+			
+			UserPosDAO dao = new UserPosDAO();
+			dao.deleteFonesPorUser(4L);
+			
 	}
 	
 }
